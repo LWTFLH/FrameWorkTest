@@ -7,16 +7,58 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import "MeController.h"
+#import "SSToolkit.h"
+#import "SSToolKitTest.h"
+#import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import "ChartController.h"
+#import "StretchController.h"
+#import "ViewController_9.h"
+#import "IOS_ViewController.h"
+#import "Mask_ViewController.h"
+#import "AddressBook.h"
+#import "SortAddress.h"
+#import "DataConsistencephalitis.h"
+#import "DBController.h"
+#import "OpenSysConfig.h"
+//#import <MagicalRecord/CoreData+MagicalRecord.h>
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+{
 
+    FBMemoryProfiler *memory;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[StretchController alloc]init]];
+ //  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[OpenSysConfig alloc] initWithNibName:@"OpenSysConfig" bundle:nil]];
+//    UITabBarController *tab = [[UITabBarController alloc]init];
+//    ViewController *vc = [[ViewController alloc] init];
+//    vc.tabBarItem.title = @"www";
+//    vc.tabBarItem.image = [UIImage imageNamed:@"home_message.png"];
+//    
+//    MeController *me = [[MeController alloc]init];
+//    me.tabBarItem.title = @"bbb";
+//    me.tabBarItem.image = [UIImage imageNamed:@"home_red_envelope.png"];
+//    
+//    UIViewController *cc  =[[UIViewController alloc]init];
+//    
+//    UINavigationController *nav  = [[UINavigationController alloc] initWithRootViewController:vc];
+//    tab.viewControllers  = @[nav,me,cc];
+//    self.window.rootViewController= tab;
+    [self.window makeKeyAndVisible];
+    memory  =[FBMemoryProfiler new];
+    [memory enable];
+    
+    
+    
+//    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"lw.sqlite"];
     return YES;
 }
 

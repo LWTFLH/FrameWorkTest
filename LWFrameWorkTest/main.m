@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+//#import <FBAllocationTracker/FBAllocationTracker.h>
+#import <FBAllocationTracker/FBAllocationTrackerManager.h>
+
+
+    //  开启
+//    [[FBAllocationTrackerManager sharedManager]startTrackingAllocations];
+//    [[FBAllocationTrackerManager sharedManager]enableGenerations];
+    int main(int argc, char * argv[]) {
+        @autoreleasepool {
+            return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        }
     }
-}
